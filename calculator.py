@@ -17,6 +17,9 @@ def clear_screen():
 def add (a,b):
     return a + b
 
+def subtract(a, b):
+    return a - b
+
 def render_header():
     print(f"\n  {ORANGE}  iOS CALCULATOR MASTER{RESET}")
     print(f"  {DARK_GRAY}──────────────────────────────────────────{RESET}")
@@ -68,8 +71,14 @@ def main():
             except ValueError:
                 last_result = "Error: Invalid Input"
                 status = "Failed: Please enter numeric values only."
-        elif choice in ['2', '3', '4']:
-            status = "Feature coming soon in feature branches!"
+        elif choice == '2':
+            try:
+                a, b = get_numbers("Subtraction")
+                last_result = subtract(a, b)
+                status = f"Subtracted {a:g} − {b:g}"
+            except ValueError:
+                last_result = "Error: Invalid Input"
+                status = "Failed: Please enter numeric values only."
         else:
             status = "Invalid option! Choose between 1 and 5."
 
