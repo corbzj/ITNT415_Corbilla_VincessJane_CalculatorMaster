@@ -20,6 +20,9 @@ def add (a,b):
 def subtract(a, b):
     return a - b
 
+def multiply(a, b):
+    return a * b
+    
 def render_header():
     print(f"\n  {ORANGE}  iOS CALCULATOR MASTER{RESET}")
     print(f"  {DARK_GRAY}──────────────────────────────────────────{RESET}")
