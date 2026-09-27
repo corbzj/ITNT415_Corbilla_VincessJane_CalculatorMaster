@@ -82,6 +82,14 @@ def main():
             except ValueError:
                 last_result = "Error: Invalid Input"
                 status = "Failed: Please enter numeric values only."
+        elif choice == '3':
+            try:
+                a, b = get_numbers("Multiplication")
+                last_result = multiply(a, b)
+                status = f"Multiplied {a:g} × {b:g}"
+            except ValueError:
+                last_result = "Error: Invalid Input"
+                status = "Failed: Please enter numeric values only."
         else:
             status = "Invalid option! Choose between 1 and 5."
 
