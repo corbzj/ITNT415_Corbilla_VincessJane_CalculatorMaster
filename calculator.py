@@ -17,6 +17,9 @@ def clear_screen():
 def add (a,b):
     return a + b
 
+def subtract(a, b):
+    return a - b
+    
 def render_header():
     print(f"\n  {ORANGE}  iOS CALCULATOR MASTER{RESET}")
     print(f"  {DARK_GRAY}──────────────────────────────────────────{RESET}")
