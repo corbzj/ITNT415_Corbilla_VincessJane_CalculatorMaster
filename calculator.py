@@ -73,7 +73,7 @@ def main():
         choice = input(f"  {BOLD}{WHITE}Choose Option (1-5):{RESET} ").strip()
 
         if choice == '5':
-            render_screen("Goodbye! Exiting iOS Calculator.", last_result)
+            render_screen("Exiting Calculator. Thank you for using the calculator. See you next time!", last_result)
             break
         elif choice == '1':
             try:
