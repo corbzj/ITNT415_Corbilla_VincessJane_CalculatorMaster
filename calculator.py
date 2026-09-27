@@ -14,6 +14,9 @@ WHITE = "\033[38;2;255;255;255m"
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def add (a,b):
+    return a + b
+
 def render_header():
     print(f"\n  {ORANGE}  iOS CALCULATOR MASTER{RESET}")
     print(f"  {DARK_GRAY}──────────────────────────────────────────{RESET}")
