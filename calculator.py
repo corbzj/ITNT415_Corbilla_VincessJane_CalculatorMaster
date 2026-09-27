@@ -14,6 +14,9 @@ WHITE = "\033[38;2;255;255;255m"
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def add (a,b):
+    return a + b
+
 def render_header():
     print(f"\n  {ORANGE}  iOS CALCULATOR MASTER{RESET}")
     print(f"  {DARK_GRAY}──────────────────────────────────────────{RESET}")
@@ -39,6 +42,12 @@ def display_menu():
     print(f"   {DARK_GRAY}[ 5 ]  ✕   Exit Calculator{RESET}")
     print(f"  {DARK_GRAY}──────────────────────────────────────────{RESET}")
 
+def get_numbers(operation_label):
+    print(f"  {ORANGE}━━ {operation_label.upper()} INPUT ━━{RESET}")
+    a = float(input(f"   {LIGHT_GRAY}Enter First Number  :{RESET} "))
+    b = float(input(f"   {LIGHT_GRAY}Enter Second Number :{RESET} "))
+    return a, b
+
 def main():
     status = "Ready"
     last_result = None
@@ -51,7 +60,15 @@ def main():
         if choice == '5':
             render_screen("Goodbye! Exiting iOS Calculator.", last_result)
             break
-        elif choice in ['1', '2', '3', '4']:
+        elif choice == '1':
+            try:
+                a, b = get_numbers("Addition")
+                last_result = add(a, b)
+                status = f"Added {a:g} + {b:g}"
+            except ValueError:
+                last_result = "Error: Invalid Input"
+                status = "Failed: Please enter numeric values only."
+        elif choice in ['2', '3', '4']:
             status = "Feature coming soon in feature branches!"
         else:
             status = "Invalid option! Choose between 1 and 5."
