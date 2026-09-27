@@ -20,6 +20,9 @@ def add (a,b):
 def subtract(a, b):
     return a - b
 
+def multiply(a, b):
+    return a * b
+    
 def render_header():
     print(f"\n  {ORANGE}  iOS CALCULATOR MASTER{RESET}")
     print(f"  {DARK_GRAY}──────────────────────────────────────────{RESET}")
@@ -76,6 +79,14 @@ def main():
                 a, b = get_numbers("Subtraction")
                 last_result = subtract(a, b)
                 status = f"Subtracted {a:g} − {b:g}"
+            except ValueError:
+                last_result = "Error: Invalid Input"
+                status = "Failed: Please enter numeric values only."
+        elif choice == '3':
+            try:
+                a, b = get_numbers("Multiplication")
+                last_result = multiply(a, b)
+                status = f"Multiplied {a:g} × {b:g}"
             except ValueError:
                 last_result = "Error: Invalid Input"
                 status = "Failed: Please enter numeric values only."
