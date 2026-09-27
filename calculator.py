@@ -22,7 +22,12 @@ def subtract(a, b):
 
 def multiply(a, b):
     return a * b
-    
+
+def divide(a, b):
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero.")
+    return a / b
+
 def render_header():
     print(f"\n  {ORANGE}  iOS CALCULATOR MASTER{RESET}")
     print(f"  {DARK_GRAY}──────────────────────────────────────────{RESET}")
@@ -87,6 +92,17 @@ def main():
                 a, b = get_numbers("Multiplication")
                 last_result = multiply(a, b)
                 status = f"Multiplied {a:g} × {b:g}"
+            except ValueError:
+                last_result = "Error: Invalid Input"
+                status = "Failed: Please enter numeric values only."
+        elif choice == '4':
+            try:
+                a, b = get_numbers("Division")
+                last_result = divide(a, b)
+                status = f"Divided {a:g} ÷ {b:g}"
+            except ZeroDivisionError as e:
+                last_result = "Error: Div by 0"
+                status = f"Failed: {e}"
             except ValueError:
                 last_result = "Error: Invalid Input"
                 status = "Failed: Please enter numeric values only."
