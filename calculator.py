@@ -1,5 +1,9 @@
-# Student Name: Vincess Jane B. Corbilla
-# Course & Section: BIT41
+# <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+# ITNT415 Cisco Networking 4 Midterm Laboratory Summative Assessment
+# Name: Vincess Jane B. Corbilla
+# CYS: bit41
+# Repository: ITNT415_Corbilla_VincessJane_CalculatorMaster
+# <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 
 import os
 
@@ -29,7 +33,7 @@ def divide(a, b):
     return a / b
 
 def render_header():
-    print(f"\n  {ORANGE}  iOS CALCULATOR MASTER{RESET}")
+    print(f"\n  {ORANGE}  CALCULATOR MASTER{RESET}")
     print(f"  {DARK_GRAY}──────────────────────────────────────────{RESET}")
 
 def render_screen(status_msg="Ready", display_value=None):
